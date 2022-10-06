@@ -4,7 +4,7 @@
 using  namespace std;
 
 int inputvalid(int,int);
-int getlist(int,int);
+void getlist(int,int);
 
 int main()
 {
@@ -30,3 +30,21 @@ int inputvalid(int begin, int end)
             return 1;
 }
 
+void getlist(int begin, int end)
+{
+    int i, j; 
+    for (i = begin; i <= end; i++)
+    {
+        for (j = 2; j<= (i/2); i++)
+        {
+            if (i % j == 0)
+            {
+                break;
+            }
+            else if (j>(i/2))
+            {
+                cout << i << "is prime" << endl;
+            }
+        }
+    }
+}
