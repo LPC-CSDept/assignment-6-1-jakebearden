@@ -3,7 +3,7 @@
 #include <iostream>
 using  namespace std;
 
-int inputvalid(int,int);
+int inputvalidate(int,int);
 void getlist(int,int);
 
 int main()
@@ -15,14 +15,17 @@ int main()
     cout << "Enter inputs" << endl;
     cin >> begin >> end;
 
-    res = inputvalid(begin,end);
-    if (!res)
+    res = inputvalidate(begin,end);
+    if ((!res))
+    {
         exit(0);
-    getlist(begin,end);
+    }
+    else
+        getlist(begin,end);
 
 }
 
-int inputvalid(int begin, int end)
+int inputvalidate(int begin, int end)
 {
     if ((begin > end) or (begin < 0) or (end = 0))
             return 0;
@@ -41,7 +44,7 @@ void getlist(int begin, int end)
             {
                 break;
             }
-            else if (j>(i/2))
+            if (j>(i/2))
             {
                 cout << i << "is prime" << endl;
             }
